@@ -118,7 +118,7 @@ CMD
 EXPOSE
 WORKDIR
 ENTRYPOINT
-ADD
+ADD --> it will be same as COPY command but it will also copy from web/internet.
 
 WelcomeApi-0.0.1-SNAPSHOT.jar
 ====
