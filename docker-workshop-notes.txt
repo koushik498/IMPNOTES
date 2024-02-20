@@ -386,6 +386,19 @@ networks:
   springboot-db-net:
 
 
+docker-compose up -d
+docker-compose down
+docker exec -it <container-name> /bin/bash/
+
+connecting mysql:
+================
+mysql -h localhost -u <username> -p <password>
+
+removing the non empty directory:
+=======
+rm -rvf /path/to/directory  
+
+
 
 
 
