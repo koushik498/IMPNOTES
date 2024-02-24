@@ -398,6 +398,54 @@ removing the non empty directory:
 =======
 rm -rvf /path/to/directory  
 
+docker file rename:
+===================
+$ docker old_file new_file
+
+run the docker file once re-named:
+==================================
+$ docker build -f new_file -t imgname .
+
+
+ENV :
+=====
+-> It is used to set the environment varibles.
+
+ex: ENV <key> <val>
+
+LABEL:
+=====
+-> Label will represent data in key value pair.
+
+-> It is used to add meta data for our image.
+
+Ex: LABEL branchName release
+
+ARG:
+====
+->It is used to avoid hard coded values in Dockerfile.
+
+Ex: ARG branch = develop
+
+Note :  we can pass argument values at RUNTIME.
+$ docker build -t imagename --build-arg branch=feature
+
+USER:
+=====
+-> We can set user for an image/container
+
+Note : After user instruction, remaining instructions will be processed with given user.
+
+VOLUME :
+======
+->It is used for data storage
+
+
+
+
+
+
+
 
 
 
