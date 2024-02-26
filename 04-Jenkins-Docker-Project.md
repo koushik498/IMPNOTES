@@ -89,3 +89,46 @@ URL : http://public-ip:port/
 # We are done with our Setup #
 	
 ## Step - 8 : After your practise, delete resources we have used in AWS Cloud to avoid billing ##
+
+pipeline{
+    agent any
+    
+    stages{
+        stage('Clonning the source code')
+        {
+            steps{
+            git 'https://github.com/koushik498/WelcomeApplication.git'
+            }
+        }
+        stage('Clean the target folder')
+        {
+             steps{
+                sh 'mvn clean'
+             }
+        }
+        stage('Install the dependencies')
+        {
+             steps{
+            sh 'mvn install'
+             }
+        }
+        stage('package the application')
+        {
+             steps{
+                sh 'mvn package'
+             }
+        }
+        stage('Docker image creation')
+        {
+             steps{
+            sh 'docker build -t img .'
+             }
+        }
+         stage('Container creation')
+        {
+             steps{
+            sh 'docker run -p 9090:8080 --name con img'
+             }
+        }
+    }
+}
