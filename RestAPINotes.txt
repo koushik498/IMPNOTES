@@ -551,7 +551,20 @@ Note: Using Swagger DOC UI page we can test our API functionality also.
 			a) Swagger Documentation
 			b) PDF Document
 
-Note: Provider will send documentation to consumer in email.			
+Note: Provider will send documentation to consumer in email.	
+
+Swagger Documentation using swagger 2.O :
+=========================================
+=> Dependencies 
+           1) Springfox-swagger2
+           2) Springfox-ui
+           3) Springfox-starter
+=>
+
+
+
+
+
 
 
 =======================================
